@@ -61,6 +61,7 @@ resource "aws_s3_bucket" "terraform3" {
   }
 }
 
+# terraform show (mostra como ta sua estrutura/ambiente na AWS)
+
 #testecommit2
 
-#testecommit3
