@@ -7,17 +7,18 @@ resource "aws_instance" "terraform" {
   count = "3"
   ami = "ami-081c75eaeac28ac34"
   instance_type = "t2.micro"
-  key_name = "aws-terraform2"
+  key_name = "aws-terraform"
   tags = {
     Name = "terraform${count.index}"
   }
   vpc_security_group_ids = ["${aws_security_group.acesso-ssh.id}"]
+  # Exemplo de referencia ao ID do security group refenciando por .id 
 }
 
 resource "aws_instance" "terraform3" {
   ami = "ami-081c75eaeac28ac34"
   instance_type = "t2.micro"
-  key_name = "aws-terraform2"
+  key_name = "aws-terraform"
   tags = {
     Name = "terraform3"
   }
@@ -28,7 +29,7 @@ resource "aws_instance" "terraform3" {
 resource "aws_instance" "terraform4" {
   ami = "ami-081c75eaeac28ac34"
   instance_type = "t2.micro"
-  key_name = "aws-terraform2"
+  key_name = "aws-terraform"
   tags = {
     Name = "terraform4"
   }
@@ -44,7 +45,7 @@ resource "aws_security_group" "acesso-ssh" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["177.67.157.188/32"]
+    cidr_blocks      = ["177.67.159.155/32"]
   }
 
   tags = {
@@ -55,6 +56,7 @@ resource "aws_security_group" "acesso-ssh" {
 # Exemplo criação bucket S3
 resource "aws_s3_bucket" "terraform3" {
   bucket = "curso-terraform-robson2"
+  acl = "private"
 
   tags = {
     Name = "curso-terraform-robson2"
