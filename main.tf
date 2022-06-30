@@ -36,23 +36,6 @@ resource "aws_instance" "terraform4" {
   vpc_security_group_ids = ["${aws_security_group.acesso-ssh.id}"]
 }
 
-# Exemplo criação security group
-resource "aws_security_group" "acesso-ssh" {
-  name        = "acesso-ssh"
-  description = "acesso-ssh"
-
-  ingress {
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["177.67.159.155/32"]
-  }
-
-  tags = {
-    Name = "ssh"
-  }
-}
-
 # Exemplo criação bucket S3
 resource "aws_s3_bucket" "terraform3" {
   bucket = "curso-terraform-robson2"
