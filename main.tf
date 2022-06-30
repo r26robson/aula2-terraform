@@ -36,16 +36,6 @@ resource "aws_instance" "terraform4" {
   vpc_security_group_ids = ["${aws_security_group.acesso-ssh.id}"]
 }
 
-# Exemplo criação bucket S3
-resource "aws_s3_bucket" "terraform3" {
-  bucket = "curso-terraform-robson2"
-  acl = "private"
-
-  tags = {
-    Name = "curso-terraform-robson2"
-  }
-}
-
 # terraform show (mostra como ta sua estrutura/ambiente na AWS)
 
 #testecommit2
