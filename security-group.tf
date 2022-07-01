@@ -2,7 +2,8 @@
 resource "aws_security_group" "acesso-ssh" {
   name        = "acesso-ssh-ohio"
   description = "acesso-ssh-ohio"
-
+  
+# Exemplo usando variaveis
   ingress {
     from_port        = 22
     to_port          = 22
