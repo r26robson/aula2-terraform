@@ -3,7 +3,7 @@ resource "aws_instance" "terraform5" {
   provider = aws.us-east-1
   ami = var.amis["amazon-linux2-us-east-1"]
   instance_type = "t2.micro"
-  key_name = "aws-terraform-nv"
+  key_name = var.key_name["key-us-east-1"]
   tags = {
     Name = "terraform5"
   }
