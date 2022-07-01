@@ -1,4 +1,4 @@
-# Exemplo de criação de instancia EC2 em outra região
+# Exemplo de criação de instancia EC2 em outra região noth virginia
 resource "aws_instance" "terraform5" {
   provider = aws.us-east-1
   ami = var.amis["amazon-linux2-us-east-1"]
